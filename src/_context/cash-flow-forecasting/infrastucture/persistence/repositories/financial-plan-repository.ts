@@ -1,4 +1,4 @@
-import { FinancialPlan } from "@/_context/domain/entities/financial-plan";
+import { FinancialPlan } from "@/_context/cash-flow-forecasting/domain/entities/financial-plan";
 import { createFinancialPlan, deleteFinancialPlan, findFinancialPlanById, updateFinancialPlan } from "../services/financial";
 import { CreateResult, DeleteResult, QueryResult, UpdateResult } from "@/_shared/lib/types/api/crud-response";
 

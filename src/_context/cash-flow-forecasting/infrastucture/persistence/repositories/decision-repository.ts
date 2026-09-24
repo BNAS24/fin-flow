@@ -1,4 +1,4 @@
-import { FinancialDecision } from "@/_context/domain/entities/decision";
+import { FinancialDecision } from "@/_context/cash-flow-forecasting/domain/entities/decision";
 
 export interface FinancialDecisionRepository {
   findById: (id: string) => Promise<FinancialDecision | null>;

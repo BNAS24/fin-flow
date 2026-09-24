@@ -1,8 +1,8 @@
-import { FinancialPlan } from "@/_context/domain/entities/financial-plan";
+import { FinancialPlan } from "@/_context/cash-flow-forecasting/domain/entities/financial-plan";
 import {
   FinancialPlanRepositoryCreateArgs,
   FinancialPlanRepositoryUpdateArgs,
-} from "@/_context/infrastucture/persistence/repositories/financial-plan-repository";
+} from "@/_context/cash-flow-forecasting/infrastucture/persistence/repositories/financial-plan-repository";
 import { createId } from "@/_shared/lib/helpers/createId";
 import {
   CreateResult,
@@ -19,7 +19,7 @@ export const findFinancialPlanById = (
 
   // Find financial plan
   const financialPlan = window.localStorage.getItem(id);
-
+ 
   if (!financialPlan) return null;
 
   return JSON.parse(financialPlan) as FinancialPlan;

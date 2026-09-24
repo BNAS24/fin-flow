@@ -1,4 +1,4 @@
-import { FinancialGoal } from "@/_context/domain/entities/goal";
+import { FinancialGoal } from "@/_context/cash-flow-forecasting/domain/entities/goal";
 
 export interface FinancialGoalRepository {
   findById: (id: string) => Promise<FinancialGoal | null>;

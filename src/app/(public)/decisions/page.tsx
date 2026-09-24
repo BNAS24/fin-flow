@@ -1,4 +1,4 @@
-import { FinancialDecisionForm } from "@/_context/presentational/components/forms/FinancialDecisionForm";
+import { FinancialDecisionForm } from "@/_context/cash-flow-forecasting/presentational/components/forms/FinancialDecisionForm";
 import { EmptyState } from "@/_shared/presentational/components/feedback/EmptyState";
 import { ContentGridContainer } from "@/_shared/presentational/components/layout/ContentGridContainer";
 import { MainContent } from "@/_shared/presentational/components/layout/MainContent";

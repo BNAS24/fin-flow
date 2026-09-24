@@ -1,4 +1,4 @@
-import { DateString } from "@/_context/domain/value-objects/local-date";
+import { DateString } from "@/_context/cash-flow-forecasting/domain/value-objects/local-date";
 import { DatasetElementType } from "@mui/x-charts/internals";
 
 /**

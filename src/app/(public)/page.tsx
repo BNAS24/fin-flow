@@ -1,10 +1,10 @@
 
-import { ProjectionScopeFilter } from "@/_context/presentational/components/input/ProjectionScopeFilter";
-import ProjectedBalanceChartV2 from "@/_context/presentational/components/line-chart/ProjectedBalanceLineChartV2";
+import { ProjectionScopeFilter } from "@/_context/cash-flow-forecasting/presentational/components/input/ProjectionScopeFilter";
+import ProjectedBalanceChartV2 from "@/_context/cash-flow-forecasting/presentational/components/line-chart/ProjectedBalanceLineChartV2";
 
-import { Goals } from "@/_context/presentational/components/list/Goals";
+import { Goals } from "@/_context/cash-flow-forecasting/presentational/components/list/Goals";
 
-import { UpcomingPayments } from "@/_context/presentational/components/list/UpcomingPayments";
+import { UpcomingPayments } from "@/_context/cash-flow-forecasting/presentational/components/list/UpcomingPayments";
 import { AccountSettingsButton } from "@/_shared/presentational/components/input/AccountSettingsButton";
 import { ContentGridContainer } from "@/_shared/presentational/components/layout/ContentGridContainer";
 import { MainContent } from "@/_shared/presentational/components/layout/MainContent";

@@ -1,4 +1,4 @@
-import { DayProjectionSummary } from "@/_context/domain/value-objects/projection-summary";
+import { DayProjectionSummary } from "@/_context/cash-flow-forecasting/domain/value-objects/projection-summary";
 import { PickerDayProps } from "@mui/x-date-pickers/PickerDay";
 
 export const CALENDAR_MARKER_KINDS = [

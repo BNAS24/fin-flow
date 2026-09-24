@@ -1,6 +1,6 @@
 "use client";
-import { FinancialFlowCalendar } from "@/_context/presentational/components/calendar/Calendar";
-import { SelectedDayPanel } from "@/_context/presentational/components/calendar/DaySelectedPanel";
+import { FinancialFlowCalendar } from "@/_context/cash-flow-forecasting/presentational/components/calendar/Calendar";
+import { SelectedDayPanel } from "@/_context/cash-flow-forecasting/presentational/components/calendar/DaySelectedPanel";
 import {
   FinancialDecisionsMockData,
   FinancialGoalsMockData,

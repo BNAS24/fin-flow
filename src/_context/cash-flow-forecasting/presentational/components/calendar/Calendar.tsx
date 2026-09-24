@@ -5,7 +5,7 @@ import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { Dayjs } from "dayjs";
 import { MarkersByDate } from "@/_shared/lib/types/util/core";
-import { CalendarDay } from "@/_context/presentational/components/calendar/CalendarDay";
+import { CalendarDay } from "@/_context/cash-flow-forecasting/presentational/components/calendar/CalendarDay";
 
 interface FinancialFlowCalendarProps {
   selectedDate: Dayjs | null;
