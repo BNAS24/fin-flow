@@ -1,7 +1,7 @@
-import { CalendarAndPanelContainer } from "@/_components/calendar/CalendarAndPanelContainer";
-import { ContentGridContainer } from "@/_components/layout/ContentGridContainer";
-import { MainContent } from "@/_components/layout/MainContent";
-import { Title } from "@/_components/utility/Title";
+import { CalendarAndPanelContainer } from "@/_context/presentational/components/calendar/CalendarAndPanelContainer";
+import { ContentGridContainer } from "@/_shared/presentational/components/layout/ContentGridContainer";
+import { MainContent } from "@/_shared/presentational/components/layout/MainContent";
+import { Title } from "@/_shared/presentational/components/utility/Title";
 import { Box } from "@mui/material";
 
 export default function Calendar() {

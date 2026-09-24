@@ -1,20 +1,20 @@
-import { EmptyState } from "@/_components/feedback/EmptyState";
-import { FinancialDecisionForm } from "@/_components/forms/FinancialDecisionForm";
-import { ContentGridContainer } from "@/_components/layout/ContentGridContainer";
-import { MainContent } from "@/_components/layout/MainContent";
-import { Title } from "@/_components/utility/Title";
-import { decisions } from "@/_data/test/lists/decisions";
+import { FinancialDecisionForm } from "@/_context/presentational/components/forms/FinancialDecisionForm";
+import { EmptyState } from "@/_shared/presentational/components/feedback/EmptyState";
+import { ContentGridContainer } from "@/_shared/presentational/components/layout/ContentGridContainer";
+import { MainContent } from "@/_shared/presentational/components/layout/MainContent";
+import { Title } from "@/_shared/presentational/components/utility/Title";
+import { decisions } from "@/_shared/presentational/data/test/lists/decisions";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
 import {
   Box,
   Card,
   CardContent,
+  IconButton,
   List,
   ListItem,
   Stack,
   Typography,
-  IconButton,
 } from "@mui/material";
 
 export default function Decisions() {

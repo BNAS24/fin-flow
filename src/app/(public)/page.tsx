@@ -1,12 +1,16 @@
-import ProjectedBalanceChartV2 from "@/_components/charts/ProjectedBalanceLineChartV2";
-import { AccountSettingsButton } from "@/_components/input/AccountSettingsButton";
-import { ProjectionScopeFilter } from "@/_components/input/ProjectionScopeFilter";
-import { ContentGridContainer } from "@/_components/layout/ContentGridContainer";
-import { MainContent } from "@/_components/layout/MainContent";
-import { Goals } from "@/_components/list/Goals";
-import { UpcomingPayments } from "@/_components/list/UpcomingPayments";
-import { Title } from "@/_components/utility/Title";
-import { paymentPreview } from "@/_data/test/payment-preview";
+
+import { ProjectionScopeFilter } from "@/_context/presentational/components/input/ProjectionScopeFilter";
+import ProjectedBalanceChartV2 from "@/_context/presentational/components/line-chart/ProjectedBalanceLineChartV2";
+
+import { Goals } from "@/_context/presentational/components/list/Goals";
+
+import { UpcomingPayments } from "@/_context/presentational/components/list/UpcomingPayments";
+import { AccountSettingsButton } from "@/_shared/presentational/components/input/AccountSettingsButton";
+import { ContentGridContainer } from "@/_shared/presentational/components/layout/ContentGridContainer";
+import { MainContent } from "@/_shared/presentational/components/layout/MainContent";
+import { Title } from "@/_shared/presentational/components/utility/Title";
+
+import { paymentPreview } from "@/_shared/presentational/data/test/payment-preview";
 import { Box, Card, Typography } from "@mui/material";
 
 export default function Home() {

@@ -1,11 +1,12 @@
-import LayoutWrapper from "@/_components/layout/LayoutWrapper";
-import { MainLayoutGrid } from "@/_components/layout/MainLayoutGrid";
-import { MobileAside } from "@/_components/navigation/MobileAside";
-import { MobileNav } from "@/_components/navigation/MobileNav";
-import { AsideV2 } from "@/_components/navigation/AsideV2";
+
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { MobileNav } from "@/_shared/presentational/components/navigation/MobileNav";
+import { MobileAside } from "@/_shared/presentational/components/navigation/MobileAside";
+import { AsideV2 } from "@/_shared/presentational/components/navigation/AsideV2";
+import LayoutWrapper from "@/_shared/presentational/components/layout/LayoutWrapper";
+import { MainLayoutGrid } from "@/_shared/presentational/components/layout/MainLayoutGrid";
 
 const inter = Inter({
   subsets: ["latin"],

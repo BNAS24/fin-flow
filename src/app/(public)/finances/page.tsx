@@ -1,13 +1,14 @@
 "use client";
-import { CustomTabPanel } from "@/_components/navigation/CustomTabPanel";
-import { ContentGridContainer } from "@/_components/layout/ContentGridContainer";
-import { MainContent } from "@/_components/layout/MainContent";
-import { Title } from "@/_components/utility/Title";
-import { financesPreview } from "@/_data/test/finances-preview";
-import { financesTabs } from "@/_data/test/finances-tabs";
+import { ContentGridContainer } from "@/_shared/presentational/components/layout/ContentGridContainer";
+import { Grid } from "@/_shared/presentational/components/layout/Grid";
+import { MainContent } from "@/_shared/presentational/components/layout/MainContent";
+import { CustomTabPanel } from "@/_shared/presentational/components/navigation/CustomTabPanel";
+import { ProgressBar } from "@/_shared/presentational/components/progress/ProgressBar";
+import { Title } from "@/_shared/presentational/components/utility/Title";
+import { financesPreview } from "@/_shared/presentational/data/test/finances-preview";
+import { financesTabs } from "@/_shared/presentational/data/test/finances-tabs";
+import { goals } from "@/_shared/presentational/data/test/lists/goals";
 import AddIcon from "@mui/icons-material/Add";
-import { ProgressBar } from "@/_components/visual/ProgressBar";
-import { goals } from "@/_data/test/lists/goals";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import TrackChangesOutlinedIcon from "@mui/icons-material/TrackChangesOutlined";
@@ -25,7 +26,6 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { Grid } from "@/_components/layout/Grid";
 
 export default function Finances() {
   const [value, setValue] = useState<number>(0);
