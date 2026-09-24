@@ -1,4 +1,4 @@
-import { Money } from "../value-objects/money";
+import { Money } from "@/_context/cash-flow-forecasting/domain/value-objects/money";
 
 export type Reliability = "low" | "medium" | "high";
 
@@ -21,7 +21,7 @@ export type FrequencyType =
 export interface FinancialEntry {
   id: string;
   type: FinancialEntryType;
-  amount: Money; // in cents
+  amount: Money["amount"]; // in cents
   tag?: string[];
   frequency: FrequencyType;
   initialEventDate: string;

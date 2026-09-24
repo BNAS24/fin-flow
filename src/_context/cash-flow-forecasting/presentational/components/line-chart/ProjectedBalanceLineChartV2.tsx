@@ -17,7 +17,7 @@ const PALETTE_LIGHT_MODE_ERROR_MAIN = "#D73337";
 const PALETTE_DARK_MODE_ERROR_MAIN = "#E64343";
 
 const projectedBalances = LineChartMockDataset.map(
-  ({ projectedBalanceCents }) => projectedBalanceCents,
+  ({ projectedBalance }) => projectedBalance,
 );
 
 const Y_AXIS_COLOR_MAP_MIN = Math.min(0, ...projectedBalances);
@@ -62,7 +62,7 @@ export default function ProjectedBalanceChartV2() {
           series={[
             {
               id: "projected-balance",
-              dataKey: "projectedBalanceCents",
+              dataKey: "projectedBalance",
               label: "Projected balance:",
               curve: LINE_CHART_CURVATURE,
               area: true,
