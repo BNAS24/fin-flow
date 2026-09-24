@@ -1,6 +1,10 @@
+import { DateString } from "@/_context/cash-flow-forecasting/domain/value-objects/local-date";
+import {
+  BalanceByDate,
+  MarkersByDate,
+} from "@/_context/cash-flow-forecasting/presentational/types/calendar";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import { Dayjs } from "dayjs";
-import { BalanceByDate, DateString, MarkersByDate } from "@/_shared/lib/types/util/core";
 
 interface SelectedDayPanelProps {
   selectedDate: Dayjs | null;
@@ -42,7 +46,7 @@ export const SelectedDayPanel = ({
           color={projection?.isDeficit ? "error.main" : "text.primary"}
         >
           {projection
-            ? `$${(projection.projectedBalanceCents / 100).toLocaleString()}`
+            ? `$${(projection.projectedBalance / 100).toLocaleString()}`
             : "No projection available"}
         </Typography>
 

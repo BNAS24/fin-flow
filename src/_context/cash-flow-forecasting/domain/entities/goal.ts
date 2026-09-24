@@ -3,8 +3,8 @@ import { Money } from "../value-objects/money";
 export interface FinancialGoal {
   id: string;
   name: string;
-  targetAmount: Money;
-  savedAmount: Money;
+  targetAmount: Money["amount"];
+  savedAmount: Money["amount"];
   deadline?: string;
   createdAt: string;
   updatedAt: string;

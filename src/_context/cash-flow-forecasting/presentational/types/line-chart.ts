@@ -1,16 +1,17 @@
 import { DateString } from "@/_context/cash-flow-forecasting/domain/value-objects/local-date";
 import { DatasetElementType } from "@mui/x-charts/internals";
+import { Money } from "../../domain/value-objects/money";
 
 /**
  * Directly consumable by an MUI LineChart through `dataset`.
  */
 export interface ProjectedBalanceChartDatum extends DatasetElementType<unknown> {
   date: DateString;
-  projectedBalanceCents: number;
+  projectedBalance: Money["amount"];
   // Helpful for custom tooltips and future chart series.
-  incomeCents: number;
-  outflowCents: number;
-  netChangeCents: number;
+  income: Money["amount"];
+  outflow: Money["amount"];
+  netChange: Money["amount"];
   isDeficit: boolean;
   isBelowSafetyBuffer: boolean;
 }

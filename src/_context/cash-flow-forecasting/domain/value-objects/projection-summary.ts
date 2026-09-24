@@ -1,10 +1,10 @@
 import { Money } from "./money";
 
 export interface DayProjectionSummary {
-  projectedBalance: Money;
-  income: Money;
-  outflow: Money;
-  netChange: Money;
+  projectedBalance: Money["amount"];
+  income: Money["amount"];
+  outflow: Money["amount"];
+  netChange: Money["amount"];
   isDeficit: boolean;
   isBelowSafetyBuffer: boolean;
 }
@@ -14,7 +14,7 @@ const create = (cents: number): Money => {
     throw new Error("Money must be represented as safe integer cents.");
   }
 
-  return { cents, currency: "USD" };
+  return { amount: cents, currency: "USD" };
 };
 
 const positive = (cents: number): Money => {
@@ -27,12 +27,12 @@ const positive = (cents: number): Money => {
 
 const add = (left: Money, right: Money): Money => {
   assertSameCurrency(left, right);
-  return create(left.cents + right.cents);
+  return create(left.amount + right.amount);
 };
 
 const subtract = (left: Money, right: Money): Money => {
   assertSameCurrency(left, right);
-  return create(left.cents - right.cents);
+  return create(left.amount - right.amount);
 };
 
 const assertSameCurrency = (left: Money, right: Money): void => {
