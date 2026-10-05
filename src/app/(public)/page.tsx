@@ -1,6 +1,6 @@
 
 import { ProjectionScopeFilter } from "@/_context/cash-flow-forecasting/presentational/components/input/ProjectionScopeFilter";
-import ProjectedBalanceChartV2 from "@/_context/cash-flow-forecasting/presentational/components/line-chart/ProjectedBalanceLineChartV2";
+import ProjectedCashFlow from "@/_context/cash-flow-forecasting/presentational/components/line-chart/ProjectedCashFlow";
 
 import { Goals } from "@/_context/cash-flow-forecasting/presentational/components/list/Goals";
 
@@ -135,9 +135,7 @@ export default function Home() {
         </Box>
         
         {/*Projected balance line chart */}
-        {/* <ProjectedBalanceChart /> */}
-
-        <ProjectedBalanceChartV2/>
+        <ProjectedCashFlow/>
 
         {/*Upcoming payment and goals container*/}
         <Box

@@ -1,46 +1,29 @@
 "use client";
-import { Title } from "@/_shared/presentational/components/utility/Title";
 import { Card, CardContent } from "@mui/material";
 import { useColorScheme } from "@mui/material/styles";
 import { chartsTooltipClasses } from "@mui/x-charts";
 import { LineChart, lineClasses } from "@mui/x-charts/LineChart";
-
-// These value WILL be dynamic and based on real time
-export const DATES = [
-  "Aug 6",
-  "Aug 9",
-  "Aug 12",
-  "Aug 15",
-  "Aug 18",
-  "Aug 21",
-  "Aug 23",
-  "Aug 24",
-  "Aug 27",
-  "Aug 30",
-  "Sep 2",
-  "Sep 5",
-];
-
-// These value WILL be dynamic and based on real time
-const BALANCES = [
-  2450, 4200, 4150, 3800, 3700, 3650, 5762, 5750, 5720, 5750, 4200, 4050,
-];
+import { LineChartMockDataset } from "@/_shared/presentational/data/test/core/mock-data";
+import { formatCentsAsCurrency } from "@/_shared/lib/helpers/currency";
+import { formatProjectionDate } from "@/_shared/lib/helpers/date-and-time";
+import { Title } from "@/_shared/presentational/components/utility/Title";
 
 const LINE_CHART_AREA_COLOR = "007652";
 const LINE_CHART_CURVATURE = "monotoneX";
-
-const Y_AXIS_COLOR_MAP_MAX = 6000;
-const Y_AXIS_TICK_SPACING = 100;
 
 const X_AXIS_TICK_SPACING = 100;
 
 const PALETTE_LIGHT_MODE_ERROR_MAIN = "#D73337";
 const PALETTE_DARK_MODE_ERROR_MAIN = "#E64343";
 
-const SERIES_VALUE_FORMATTER = (value: number | null) =>
-  value === null ? "" : `$${value.toLocaleString()}`;
+const projectedBalances = LineChartMockDataset.map(
+  ({ projectedBalance }) => projectedBalance,
+);
 
-export default function ProjectedBalanceChart() {
+const Y_AXIS_COLOR_MAP_MIN = Math.min(0, ...projectedBalances);
+const Y_AXIS_COLOR_MAP_MAX = Math.max(0, ...projectedBalances);
+
+export default function ProjectedCashFlow() {
   const { mode } = useColorScheme();
 
   return (
@@ -75,44 +58,47 @@ export default function ProjectedBalanceChart() {
         <LineChart
           height={320}
           hideLegend
+          dataset={LineChartMockDataset}
           series={[
             {
-              id: "balance",
+              id: "projected-balance",
+              dataKey: "projectedBalance",
               label: "Projected balance:",
               curve: LINE_CHART_CURVATURE,
-              data: BALANCES,
               area: true,
               showMark: false,
-              valueFormatter: SERIES_VALUE_FORMATTER,
+              valueFormatter: formatCentsAsCurrency,
             },
           ]}
-          grid={{ horizontal: true }}
           xAxis={[
             {
-              data: DATES,
+              id: "projection-date",
+              dataKey: "date",
               scaleType: "point",
               tickSpacing: X_AXIS_TICK_SPACING,
               disableTicks: true,
+              valueFormatter: formatProjectionDate,
             },
           ]}
           yAxis={[
             {
+              id: "projected-balance-cents",
               colorMap: {
                 type: "continuous",
-                min: 0,
+                min: Y_AXIS_COLOR_MAP_MIN,
                 max: Y_AXIS_COLOR_MAP_MAX,
                 color: [
                   `#${LINE_CHART_AREA_COLOR}00`,
                   `#${LINE_CHART_AREA_COLOR}70`,
                 ],
               },
-              max: 6000,
-              valueFormatter: (value: number) => `$${value / 1000}K`,
+              valueFormatter: formatCentsAsCurrency,
+              tickNumber: 5,
               disableTicks: true,
               disableLine: true,
-              tickSpacing: Y_AXIS_TICK_SPACING,
             },
           ]}
+          grid={{ horizontal: true }}
           sx={{
             // Keep the fill; eliminate its closed-outline stroke.
             [`& .${lineClasses.area}`]: {

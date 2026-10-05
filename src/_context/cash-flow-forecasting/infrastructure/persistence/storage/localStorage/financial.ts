@@ -2,7 +2,7 @@ import { FinancialPlan } from "@/_context/cash-flow-forecasting/domain/entities/
 import {
   FinancialPlanRepositoryCreateArgs,
   FinancialPlanRepositoryUpdateArgs,
-} from "@/_context/cash-flow-forecasting/infrastucture/persistence/repositories/financial-plan-repository";
+} from "@/_context/cash-flow-forecasting/infrastructure/persistence/repositories/client/financial-plan";
 import { createId } from "@/_shared/lib/helpers/createId";
 import {
   CreateResult,
@@ -15,8 +15,6 @@ import {
 export const findFinancialPlanById = (
   id: string, // The financial plan's record id
 ): QueryResult<FinancialPlan> => {
-  // Sanatize input
-
   // Find financial plan
   const financialPlan = window.localStorage.getItem(id);
  
@@ -28,10 +26,8 @@ export const findFinancialPlanById = (
 // Update financial plan object specified by id
 export const updateFinancialPlan = ({
   id,
-  updates,
+ update,
 }: FinancialPlanRepositoryUpdateArgs): UpdateResult<FinancialPlan> => {
-  // Sanatize input
-
   const financialPlan = window.localStorage.getItem(id);
 
   if (!financialPlan) return null;
@@ -39,7 +35,7 @@ export const updateFinancialPlan = ({
   const parsedData: FinancialPlan = JSON.parse(financialPlan);
 
   // Merge the new partial updates into the existing object
-  const updatedData = { ...parsedData, ...updates };
+  const updatedData = { ...parsedData, ...update };
 
   // Transform object as a string for local storage
   const updateDataStringified = JSON.stringify(updatedData);
@@ -54,22 +50,18 @@ export const updateFinancialPlan = ({
 // Should only be used once for each browser or accoun
 export const createFinancialPlan = ({
   id,
-  input,
+  financialPlan,
 }: FinancialPlanRepositoryCreateArgs): CreateResult<FinancialPlan> => {
-  // Sanatize input and id
-  // Actually create
-  const sanitizedInput = input;
-
   // Create id if missing
   const financialPlanId = id ? id : createId();
 
   // Transform object as a string for local storage
-  const inputStringified = JSON.stringify(sanitizedInput);
+  const inputStringified = JSON.stringify(financialPlan);
 
   // Update date object persisted in local storage
   window.localStorage.setItem(financialPlanId, inputStringified);
 
-  return sanitizedInput;
+  return financialPlan;
 };
 
 // Delete financial account

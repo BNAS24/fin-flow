@@ -1,4 +1,6 @@
-export const formatCentsAsCurrency = (cents: number | null) => {
+import { Money } from "@/_context/cash-flow-forecasting/domain/value-objects/money";
+
+export const formatCentsAsCurrency = (cents: Money["amount"] | null) => {
   if (cents == null) {
     return "";
   }
